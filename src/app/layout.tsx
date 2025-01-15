@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const interFont = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const satoshiFont = localFont({
+  src: "../fonts/Satoshi-Variable.ttf"
 });
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interFont.variable} antialiased font-sans`}
+        className={`${satoshiFont.className} antialiased font-sans`}
       >
         {children}
       </body>
